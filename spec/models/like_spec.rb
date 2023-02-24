@@ -6,12 +6,12 @@ RSpec.describe Like, type: :model do
     @post = Post.create(author: @user, title: 'My post', text: 'Hello!')
   end
 
-  it 'checks validity of like present' do
+  it 'like presence should be valid' do
     @like = Like.create(author: @user, post: @post)
     expect(@like).to be_valid
   end
 
-  it 'checks likes counter' do
+  it 'update_likes_counter should increse likes' do
     Like.create(author: @user, post: @post)
     expect(@post.likes_counter).to eq 1
   end

@@ -6,32 +6,32 @@ RSpec.describe Post, type: :model do
     @post = Post.create(author: @user, title: 'My post', text: 'Hello!')
   end
 
-  it 'checks title presence' do
+  it 'title presence should be valid' do
     @post.title = nil
     expect(@post).to_not be_valid
   end
 
-  it 'checks validation for comments counter' do
+  it 'comments counter should be valid' do
     @post.comments_counter = nil
     expect(@post).to_not be_valid
   end
 
-  it 'checks if author id is present' do
+  it 'author id should be present' do
     @post.author_id = nil
     expect(@post).to_not be_valid
   end
 
-  it 'checks if comments counter is an integer' do
+  it 'comments counter should be an integer' do
     @post.comments_counter = 'hello'
     expect(@post).to_not be_valid
   end
 
-  it 'checks if likes counter is an integer' do
+  it 'likes counter should be an integer' do
     @post.likes_counter = 'hello'
     expect(@post).to_not be_valid
   end
 
-  describe 'Check methods in post' do
+  describe 'methods in post' do
     before do
       @user = User.create(name: 'Paulina', photo: 'https://unsplash.com/es/fotos/vuBaykPW1Dk', bio: 'Student')
       @post1 = Post.create(author: @user, title: 'My post', text: 'Hello!')
@@ -40,11 +40,11 @@ RSpec.describe Post, type: :model do
       end
     end
 
-    it 'should have the five recent comments method' do
+    it 'should have the recent comments method' do
       expect(@post).to respond_to(:recent_comments)
     end
 
-    it 'should return an empty array' do
+    it 'should return recent comments count' do
       expect(@post1.recent_comments.count).to eql(5)
     end
   end
