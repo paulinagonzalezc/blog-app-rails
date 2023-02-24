@@ -36,7 +36,7 @@ RSpec.describe Post, type: :model do
       @user = User.create(name: 'Paulina', photo: 'https://unsplash.com/es/fotos/vuBaykPW1Dk', bio: 'Student')
       @post1 = Post.create(author: @user, title: 'My post', text: 'Hello!')
       6.times do
-        Comment.create(post: @post1, author: @user, text: 'Hi Tom!' )
+        Comment.create(post: @post1, author: @user, text: 'Hi Tom!')
       end
     end
 
@@ -49,22 +49,3 @@ RSpec.describe Post, type: :model do
     end
   end
 end
-
-
- # describe 'Check methods in post' do
-  #   before do
-  #     @user = User.new(name: 'Paulina', photo: 'https://unsplash.com/es/fotos/vuBaykPW1Dk', bio: 'Student')
-  #     @post1 = Post.create(author: @user, title: 'Hello', text: 'This is my first post')
-  #     5.times do
-  #       Comment.create(post: @post1, author: @user, text: 'Hi Paulina!')
-  #     end
-  #   end
-
-  #   it 'should have the five recent comments method' do
-  #     expect(@post).to respond_to(:recent_comments)
-  #   end
-
-  #   it 'should return an empty array' do
-  #     expect(@post1.recent_comments.count).to eql(0)
-  #   end
-  # end
