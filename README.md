@@ -57,18 +57,54 @@ This Blog app will be a classic example of a blog website. I will create a fully
 
 ## 💻 Getting Started <a name="getting-started"></a>
 
-Clone project
+To get a local copy up and running, follow these steps.
 
-```bash
-git clone https://github.com/paulinagonzalezc/blog-app-rails
+### Prerequisites
 
-cd blog-app-rails
+In order to run this project you need:
+
+```sh
+ gem install rails
 ```
 
-Run the program
+### Setup
 
-```bash
-rails s
+Clone this repository to your desired folder:
+
+```sh
+  cd my-folder
+  git clone  https://github.com/paulinagonzalezc/blog-app-rails
+```
+
+-
+
+### Install
+
+Install this project with:
+
+```sh
+  cd my-folder
+  gem install
+```
+
+-
+
+### Usage
+
+To run the project, execute the following command:
+
+```sh
+  rails server
+```
+
+-
+
+### Run tests
+
+To run tests, run the following command:
+
+```sh
+  rspec
 ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -85,7 +121,8 @@ rails s
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **More methods**
+- [ ] **Create new users**
+- [ ] **Improve UI**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
