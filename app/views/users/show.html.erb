@@ -1,5 +1,34 @@
-<h1><%= @user.name %></h1>
+<div class="main-container">
+ <div class="users-wrapper">
+    <div class="img-cont">
+      <%= image_tag @user.photo, :size => "70x80", alt: "user photo" %>
+    </div>
+    <div class="user-details">
+      <h1><%= @user.name %></h1>
+      <p>Number of posts: <%= @user.posts_counter %></p>
+    </div>
+ </div>
 
-<p>Photo: <%= image_tag @user.photo %></p>
-<p>Bio: <%= @user.bio %></p>
-<p>Id: <%= @user.id %></p>
+ <div class="user-bio">
+   <h2>Bio</h2>
+   <p><%= @user.bio %></p>
+ </div>
+
+ <div class="user-posts">
+   <% if @user.recent_posts.count.zero? %>
+   <p>User has no posts yet</p>
+   <% else %>
+   <% @user.recent_posts.each do |post| %>
+     <div class="users-post">
+       <h2><%= post.title %></h2>
+       <p><%= post.text %></p>
+       <h4>Comments: <%=post.comments_counter %>, Likes: <%= post.likes_counter %></h4>
+     </div>
+     <% end %>
+    <% end %>
+
+    <button>
+      <%= link_to "See all posts", user_posts_path(@user), class: "link-button" %>
+    </button>
+ <div>
+ </div>

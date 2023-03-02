@@ -1,8 +1,18 @@
-<h1><%= @post.title %></h1>
-<p>Post id: <%= @post.id %></p>
-<p>Text: <%= @post.text %></p>
-<p>Comments:<%= @post.comments_counter %></p>
-<p>Created at: <%= @post.created_at %></p>
-<p>Updated at: <%= @post.updated_at %></p>
-<p>Author id: <%= @post.author_id %></p>
+<div class="main-container">
+<div class="post-container">
+  <h2><%= @post.title %> by <%= @post.author.name %></h2>
+  <h6>Comments: <%= @post.comments_counter %>, Likes: <%= @post.likes_counter %></h6>
+  <p class="post-text"><%= @post.text %></p>
+</div>
+
+<div class="comments-cont">
+  <% if @post.all_comments.count.zero? %>
+  <p>Post has no comments yet</p>
+  <%else%>
+  <% @post.all_comments.each do |comment| %>
+    <p><%= comment.author.name %>: <%= comment.text %></p>
+  <% end %>
+  <% end %>
+</div>
+</div>
 
