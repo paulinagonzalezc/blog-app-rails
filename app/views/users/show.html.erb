@@ -1,16 +1,16 @@
 <div class="main-container">
  <div class="users-wrapper">
     <div class="img-cont">
-      <%= image_tag @user.photo, :size => "50x50", alt: "user photo" %>
+      <%= image_tag @user.photo, :size => "70x80", alt: "user photo" %>
     </div>
     <div class="user-details">
-      <h2><%= @user.name %></h2>
+      <h1><%= @user.name %></h1>
       <p>Number of posts: <%= @user.posts_counter %></p>
     </div>
  </div>
 
  <div class="user-bio">
-   <h3>Bio</h3>
+   <h2>Bio</h2>
    <p><%= @user.bio %></p>
  </div>
 

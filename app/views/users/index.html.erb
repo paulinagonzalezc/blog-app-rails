@@ -2,10 +2,10 @@
 <% @users.each do |user| %>
   <div class="users-wrapper">
     <div class="img-cont">
-      <%= image_tag user.photo, :size => "50x50", alt: "user photo" %>
+      <%= image_tag user.photo, :size => "70x85", alt: "user photo" %>
     </div>
     <div class="user-details">
-      <h2><%= link_to user.name, user, class: "link-button"  %></h2>
+      <h1><%= link_to user.name, user, class: "link-button"  %></h1>
       <p>Number of posts: <%= user.posts_counter %></p>
     </div>
   </div>
