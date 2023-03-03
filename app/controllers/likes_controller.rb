@@ -1,7 +1,7 @@
 class LikesController < ApplicationController
   def create
     post = Post.find(params[:post_id])
-    like = Like.create(post: post, author: current_user)
+    like = Like.create(post:, author: current_user)
 
     if like.save
       redirect_to user_post_path(post.author, post), notice: 'Post liked!'
@@ -12,7 +12,7 @@ class LikesController < ApplicationController
 
   def destroy
     post = Post.find(params[:post_id])
-    like = Like.find_by(post: post, user: current_user)
+    like = Like.find_by(post:, user: current_user)
 
     if like.destroy
       redirect_to user_post_path(post.author, post), notice: 'Post unliked!'
