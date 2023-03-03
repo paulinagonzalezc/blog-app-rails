@@ -27,8 +27,9 @@
      <% end %>
     <% end %>
 
-    <button>
-      <%= link_to "See all posts", user_posts_path(@user), class: "link-button" %>
+    <button class="all-post-button">
+      <%= link_to "See all posts", user_posts_path(@user), class: "all-posts" %>
     </button>
+    <button class="create-post-button"type="button"><%= link_to "Create a post", new_user_post_path(@user), class: "create-post"  %></button>
  <div>
  </div>

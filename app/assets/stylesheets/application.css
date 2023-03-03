@@ -100,3 +100,36 @@ body {
   margin-left: 40%;
   font-size: 20px;
 }
+
+.like-comment-btn {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.add-comment,
+.add-like,
+.all-post-button,
+.create-post-button,
+.pagination {
+  padding: 5px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0 1px 4px;
+  border: none;
+  border-radius: 5%;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.add-comment:hover,
+.add-like:hover {
+  background-color: rgb(174, 174, 174);
+  cursor: pointer;
+  border: gray;
+}
+
+.comment-link,
+.all-posts,
+.create-post {
+  border: gray;
+  text-decoration: none; /* no underline */
+  color: black;
+}
