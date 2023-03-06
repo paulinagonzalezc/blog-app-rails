@@ -5,11 +5,11 @@ RSpec.describe 'Post Page Index', type: :feature do
     @user = User.create(
       name: 'Phyllis Smith',
       photo: 'https://roost.nbcuni.com/bin/viewasset.html/content/dam/Peacock/Campaign/landingpages/library/theoffice/characterbios/office-bio-phyllis-min.png/_jcr_content/renditions/original?downsize=1200:*&output-quality=70',
-      bio: 'Sales representative',
+      bio: 'Sales representative'
     )
     @post = Post.create(author: @user, title: 'Hello', text: 'This is my first post!')
-    Comment.create(post: @post, author: @user, text: 'Happy to comment!' )
-    Comment.create(post: @post, author: @user, text: 'Today is a good day!' )
+    Comment.create(post: @post, author: @user, text: 'Happy to comment!')
+    Comment.create(post: @post, author: @user, text: 'Today is a good day!')
     visit user_posts_path(@user.id)
   end
 
