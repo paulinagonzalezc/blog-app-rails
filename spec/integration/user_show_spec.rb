@@ -5,7 +5,7 @@ RSpec.describe 'User Page Index', type: :feature do
     @user = User.create(
       name: 'Paulina',
       photo: 'https://cdn-icons-png.flaticon.com/512/3220/3220315.png',
-      bio: 'Artist',
+      bio: 'Artist'
     )
     @post1 = Post.create(author: @user, title: 'Hello1', text: 'This is my first post!')
     @post2 = Post.create(author: @user, title: 'Hello2', text: 'This is my second post!')
