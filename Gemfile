@@ -77,5 +77,5 @@ gem 'rubocop', '>= 1.0', '< 2.0'
 
 gem 'rspec-rails'
 
-# Use the devise gem as the session and account manager for the application 
+# Use the devise gem as the session and account manager for the application
 gem 'devise'
