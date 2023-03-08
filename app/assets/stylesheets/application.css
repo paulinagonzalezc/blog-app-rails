@@ -133,3 +133,46 @@ body {
   text-decoration: none; /* no underline */
   color: black;
 }
+
+/* Sign Up window */
+.field {
+  padding: 10px;
+}
+
+.input-field {
+  width: 450px;
+  height: 40px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+}
+
+.devise-button {
+  padding: 5px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0 1px 4px;
+  border: none;
+  border-radius: 5%;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  margin: 20px;
+  cursor: pointer;
+}
+
+.devise-title {
+  margin: 15px;
+}
+
+.sign-main {
+  display: flex;
+  justify-content: center;
+}
+
+.link-login {
+  border: gray;
+  text-decoration: none; /* no underline */
+  color: black;
+}
