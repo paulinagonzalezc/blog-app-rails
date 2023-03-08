@@ -16,7 +16,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    current_user = User.find(params[:user_id])
+    # current_user = User.find(params[:user_id])
     @post = current_user.posts.new(post_params)
 
     if @post.save

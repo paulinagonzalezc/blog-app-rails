@@ -1,12 +1,14 @@
 <%= form_with model: @post, url: user_posts_path, method: :post, local: true, scope: :new_post do |form| %>
-  <div>
+  <div class="post-input-wrapper">
     <%= form.label :title %><br>
-    <%= form.text_field :title %>
+    <%= form.text_field :title, class: "post-input-title" %>
   </div>
 
-  <div>
+  <div class="post-input-wrapper">
     <%= form.label :text %><br>
-    <%= form.text_area :text %>
+    <%= form.text_area :text, class:"post-input-text"%>
   </div>
-  <%= form.submit "Add Post"%>
+  <div class="add-post-wrapper">
+  <%= form.submit "Add Post", class:"add-post"%>
+  </div>
 <% end %>

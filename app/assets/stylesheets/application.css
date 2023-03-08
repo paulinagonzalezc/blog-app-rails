@@ -108,6 +108,7 @@ body {
 }
 
 .add-comment,
+.add-post,
 .add-like,
 .all-post-button,
 .create-post-button,
@@ -175,4 +176,44 @@ body {
   border: gray;
   text-decoration: none; /* no underline */
   color: black;
+}
+
+.delete-button {
+  padding: 5px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0 1px 4px;
+  border: none;
+  border-radius: 5%;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  margin: 20px;
+  cursor: pointer;
+}
+
+.delete-btn-wrapper {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.post-input-title,
+.post-input-text,
+.comment-input {
+  width: 450px;
+  height: 40px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+}
+
+.post-input-wrapper,
+.comment-input-wrapper {
+  margin: 25px;
+}
+
+.add-post-wrapper,
+.add-comment-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.add-comment-title {
+  margin: 15px;
 }

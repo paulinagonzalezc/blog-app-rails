@@ -1,6 +1,9 @@
 <div class="main-container">
 <div class="sign-main">
   <%= button_to "Sign out", destroy_user_session_path, method: :delete, class: "devise-button" %>
+  <% if user_signed_in? %>
+    <p class="logged-as">Logged in as <%= current_user.try(:name) %></p>
+  <% end %>
   <% unless user_signed_in? %>
   <button class="devise-button">
     <%= link_to "Log in", new_user_session_path, class: "link-login"%>
