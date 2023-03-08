@@ -117,6 +117,12 @@ To run tests, run the following command:
 - Twitter: [@paulinagzzc](https://twitter.com/paulinagzzc)
 - LinkedIn: [Paulina Gonzalez Cantu](https://linkedin.com/in/paulina-gonzalez-cantu)
 
+👤 **Martin Perez Bazan**
+
+- GitHub: [@mperezbazan](https://github.com/mperezbazan)
+- Twitter: [@mperezbazan](https://twitter.com/mperezbazan)
+- LinkedIn: [mperezbazan](https://linkedin.com/in/mperezbazan)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🔭 Future Features <a name="future-features"></a>
