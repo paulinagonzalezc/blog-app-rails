@@ -1,6 +1,9 @@
 <div class="main-container">
 <div class="sign-main">
   <%= button_to "Sign out", destroy_user_session_path, method: :delete, class: "devise-button" %>
+  <% if user_signed_in? %>
+    <p class="logged-as">Logged in as <%= current_user.try(:name) %></p>
+  <% end %>
   <% unless user_signed_in? %>
   <button class="devise-button">
     <%= link_to "Log in", new_user_session_path, class: "link-login"%>
@@ -10,7 +13,7 @@
 <% @users.each do |user| %>
   <div class="users-wrapper">
     <div class="img-cont">
-      <%= image_tag user.photo, :size => "70x85", alt: "user photo" %>
+      <%= image_tag(user.photo.present? ? user.photo : "default_user_photo.png", size: "70x85", alt: "user photo") %>
     </div>
     <div class="user-details">
       <h1><%= link_to user.name, user, class: "link-button"  %></h1>

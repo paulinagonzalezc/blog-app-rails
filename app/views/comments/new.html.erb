@@ -1,9 +1,11 @@
-<h1>Add new comments</h1>
+<h1 class="add-comment-title">Add a new comment</h1>
 
 <%= form_with model: @comment, url: user_post_comments_path, method: :post, local: true, scope: :comment do |form| %>
-  <div>
+  <div class="comment-input-wrapper">
     <%= form.label :text %><br>
-    <%= form.text_area :text %>
+    <%= form.text_area :text, class: "comment-input"%>
   </div>
-  <%= form.submit "Add Comment" %>
+  <div class="add-comment-wrapper">
+  <%= form.submit "Add Comment", class:"add-comment" %>
+  </div>
 <% end %>

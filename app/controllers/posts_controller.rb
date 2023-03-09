@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  load_and_authorize_resource
   def index
     @user = User.find(params[:user_id])
     @posts = @user.posts.includes(:comments)
@@ -15,7 +16,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    current_user = User.find(params[:user_id])
+    # current_user = User.find(params[:user_id])
     @post = current_user.posts.new(post_params)
 
     if @post.save
@@ -23,6 +24,15 @@ class PostsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def destroy
+    current_user = User.find(params[:user_id])
+    post = Post.find_by!(id: params[:id])
+    post.destroy
+    current_user.decrement!(:posts_counter)
+    flash[:notice] = 'The post was deleted'
+    redirect_to user_posts_path(current_user)
   end
 
   private
