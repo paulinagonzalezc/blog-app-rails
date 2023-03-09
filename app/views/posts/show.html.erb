@@ -18,6 +18,11 @@
   <%else%>
   <% @post.all_comments.each do |comment| %>
     <p><%= comment.author.name %>: <%= comment.text %></p>
+    <div class="delete-btn-wrapper">
+    <% if can? :destroy, comment %>
+      <%= button_to 'Delete Comment', user_post_comment_path(@user, @post, comment), method: :delete, class: "delete-button" %>
+    <% end %>
+    </div>
   <% end %>
   <% end %>
 </div>
