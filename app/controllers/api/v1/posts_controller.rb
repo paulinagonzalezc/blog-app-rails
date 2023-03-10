@@ -1,5 +1,5 @@
 class Api::V1::PostsController < Api::V1::ApplicationController
-  before_action :set_user, only: [:index, :create]
+  before_action :set_user, only: %i[index create]
 
   def index
     posts = Post.where(author_id: @user.id)
@@ -11,7 +11,7 @@ class Api::V1::PostsController < Api::V1::ApplicationController
     if post
       render json: post, status: :ok
     else
-      render json: { error: "Post not found" }, status: :not_found
+      render json: { error: 'Post not found' }, status: :not_found
     end
   end
 
@@ -20,7 +20,7 @@ class Api::V1::PostsController < Api::V1::ApplicationController
     if post.save
       render json: post, status: :created
     else
-      render json: { error: post.errors.full_messages.join(", ") }, status: :unprocessable_entity
+      render json: { error: post.errors.full_messages.join(', ') }, status: :unprocessable_entity
     end
   end
 
