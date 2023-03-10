@@ -82,3 +82,7 @@ gem 'devise'
 
 # authorization
 gem 'cancancan'
+
+gem 'bcrypt', '~> 3.1', '>= 3.1.18'
+
+gem 'jwt'
