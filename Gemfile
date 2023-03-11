@@ -86,3 +86,8 @@ gem 'cancancan'
 gem 'bcrypt', '~> 3.1', '>= 3.1.18'
 
 gem 'jwt'
+
+# add rswag
+gem 'rswag'
+
+gem 'swagger_ui_engine'
