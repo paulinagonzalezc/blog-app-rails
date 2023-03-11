@@ -1,11 +1,11 @@
 require 'swagger_helper'
 
-RSpec.describe "Api::V1::Comments", type: :request do
+RSpec.describe 'Api::V1::Comments', type: :request do
   fixtures :users, :posts # load the users fixture
-  describe "GET /api/v1/users/:user_id/posts/:post_id/comments" do
-    it "returns status code 200" do
+  describe 'GET /api/v1/users/:user_id/posts/:post_id/comments' do
+    it 'returns status code 200' do
       user = users(:paulina) # use the paulina fixture
-      post = posts(:post_1) # use the post_1 fixture
+      post = posts(:post1) # use the post_1 fixture
       get api_v1_user_post_comments_path(user.id, post.id)
       expect(response).to have_http_status(200)
     end
@@ -13,15 +13,15 @@ RSpec.describe "Api::V1::Comments", type: :request do
 
   describe 'POST /api/v1/users/:user_id/posts/:post_id/comments' do
     fixtures :users, :posts
-     it 'checks if comment has been added' do
+    it 'checks if comment has been added' do
       user = users(:paulina) # use the paulina fixture
-      post = posts(:post_1) # use the post_1 fixture
+      post = posts(:post1) # use the post_1 fixture
       valid_attributes = {
         comment: {
-        post: posts(:post_1),
-        author: users(:paulina),
-        text: 'Hello there'
-      }
+          post: posts(:post1),
+          author: users(:paulina),
+          text: 'Hello there'
+        }
       }
       post api_v1_user_post_comments_path(user.id, post.id), params: valid_attributes
       puts response.body
