@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  mount Rswag::Ui::Engine => '/api-docs'
+  mount Rswag::Api::Engine => '/api-docs'
   devise_for :users
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   resources :users, only: [:index, :show] do
@@ -17,6 +19,8 @@ Rails.application.routes.draw do
     end
   end
   end
+
+  mount SwaggerUiEngine::Engine, at: '/swagger'
 
   root 'users#index'
 end
